@@ -15,6 +15,7 @@ public class PasswordGenerator {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите длину пароля (Длина должна находиться в диапазоне от 8 до 12 символов):");
         int passwordLength = scanner.nextInt();
+        
         while (passwordLength < 8 || passwordLength > 12) {
             System.out.println("Неверная длина пароля!");
             System.out.println("Введите длину пароля (Длина должна находиться в диапазоне от 8 до 12 символов):");
@@ -94,11 +95,11 @@ public class PasswordGenerator {
         char[] range4 = getCharacters(123, 126);    //28 - 31
 
         for (int i = 0; i < specialChars.length; i++) {
-            if (i <= range1.length - 1) {
+            if (i < range1.length) {
                 specialChars[i] = range1[i];
-            } else if (i <= range1.length + range2.length - 1) {
+            } else if (i < range1.length + range2.length) {
                 specialChars[i] = range2[i - range1.length];
-            } else if (i <= range1.length + range2.length + range3.length - 1) {
+            } else if (i < range1.length + range2.length + range3.length) {
                 specialChars[i] = range3[i - (range1.length + range2.length)];
             } else {
                 specialChars[i] = range4[i - (range1.length + range2.length + range3.length)];
