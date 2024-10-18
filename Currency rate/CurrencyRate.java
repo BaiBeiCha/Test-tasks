@@ -99,7 +99,7 @@ public class CurrencyRate {
                             + "GBP: " + gbp + "\n";
             System.out.println(message);
 
-            System.out.println("Выберите: продолжить “+” или закончить “-”");
+            System.out.println("Выберите: продолжить " + continueProgram + " или закончить " + endProgram);
             switch (scanner.nextLine()) {
                 case continueProgram:
                     break;
