@@ -9,7 +9,7 @@ public class Game {
 
     public static void main(String[] args) {
         Topic topic = getTopic();
-        int lives = 7;
+        int lives;
         boolean isActive = true;
 
         while (isActive) {
