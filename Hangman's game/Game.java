@@ -59,10 +59,10 @@ public class Game {
                     lives--;
                 }
 
-                String unknownWord = makeUnknownWord(word, convertToInt(knownPositions));
-
                 System.out.println("\nКоличество жизней: " + lives);
                 printHangman(lives);
+                
+                String unknownWord = makeUnknownWord(word, convertToInt(knownPositions));
                 System.out.println(unknownWord);
 
                 if (unknownWord.equals(word)) {
