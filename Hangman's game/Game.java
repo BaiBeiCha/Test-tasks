@@ -55,7 +55,8 @@ public class Game {
                     }
                 } else {
                     System.out.println("Такой буквы нет!");
-                    incorrectLetters.add(letter);
+                    if (!containLetter(letter.charAt(0), convertToString(incorrectLetters)))
+                        incorrectLetters.add(letter);
                     lives--;
                 }
 
@@ -73,7 +74,7 @@ public class Game {
             if (won) {
                 System.out.println("Слово было отгадано!");
             } else {
-                System.out.println("Слово не было отгадано!");
+                System.out.println("Слово не было отгадано!\nВерное слово - " + word);
             }
 
             System.out.println("\n\n\nВыберете действие: \nПродолжить:" + Constants.continueProgram
