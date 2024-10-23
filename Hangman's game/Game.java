@@ -77,8 +77,8 @@ public class Game {
                 System.out.println("Слово не было отгадано!\nВерное слово - " + word);
             }
 
-            System.out.println("\n\n\nВыберете действие: \nПродолжить:" + Constants.continueProgram
-                    + "\nЗавершить:" + Constants.endProgram + "\nСменить тему:" + Constants.changeTopic);
+            System.out.println("\n\n\nВыберете действие: \nПродолжить: " + Constants.continueProgram
+                    + "\nЗавершить: " + Constants.endProgram + "\nСменить тему: " + Constants.changeTopic);
             switch (scanner.nextLine()) {
                 case Constants.continueProgram:
                     break;
@@ -108,7 +108,7 @@ public class Game {
                 return Topic.ANIMALS;
             case "природа", "п":
                 return Topic.NATURE;
-            case "еда", "е":
+            case "еда и напитки", "еда", "напитки", "е":
                 return Topic.FOOD;
             case "страны", "с":
                 return Topic.COUNTRIES;
@@ -125,7 +125,15 @@ public class Game {
     //Получение случайной темы
     private static Topic getRandomTopic() {
         Random random = new Random();
-        return Topic.values()[random.nextInt(Topic.values().length)];
+        Topic topic = Topic.values()[random.nextInt(Topic.values().length)];
+        switch (topic) {
+            case ANIMALS -> System.out.println("Тема: животные");
+            case NATURE -> System.out.println("Тема: природа");
+            case FOOD -> System.out.println("Тема: еда");
+            case COUNTRIES -> System.out.println("Тема: страны");
+            case CHEMICAL_ELEMENTS -> System.out.println("Тема: химические элементы");
+        }
+        return topic;
     }
 
     //Проверка на наличие буквы в слове
