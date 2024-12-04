@@ -42,7 +42,7 @@ public class Game {
                 System.out.println("Введите букву: ");
 
                 String letter = scanner.nextLine();
-                while (letter.length() > 1) {
+                while (letter.length() != 1) {
                     System.out.println("Неверное значение! \nВведите букву: ");
                     letter = scanner.nextLine();
                 }
